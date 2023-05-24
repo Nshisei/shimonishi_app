@@ -1,6 +1,5 @@
 #!/bin/sh
 
-OPENAI_API_KEY="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"
 TEMP=$1
 
 curl https://api.openai.com/v1/chat/completions \
