@@ -7,11 +7,13 @@ import os
 import time
 def readSensor():
     for file in os.listdir("/sys/bus/w1/devices/"):
+        print(file)
         if not (file.startswith("28-")):
             continue
         tfile = open("/sys/bus/w1/devices/"+file+"/w1_slave")
         text = tfile.read()
         tfile.close()
+        print(text)
         secondline = text.split("\n")[1]
         temperaturedata = secondline.split(" ")[9]
         temperature = float(temperaturedata[2:])
@@ -23,5 +25,5 @@ def readSensor():
 # starting with "28-.."
 
 if __name__ == "__main__":
-    readSensor()
+    print(readSensor())
 
