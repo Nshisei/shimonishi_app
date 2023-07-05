@@ -5,7 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from get_temp import readSensor
 # from get_temp import readSensor
-target_ip = "192.168.4.1"
+target_ip = "192.168.4.3"
 target_port = 3334
 buffer_size = 1024
 
