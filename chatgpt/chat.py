@@ -9,7 +9,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from connection.target import get_temp_from_server
 
 def get_temperature():
-    temp = get_temp_from_server()
+    temp = float(get_temp_from_server())
+    print(temp)
     return temp
 
 def chatgpt(temperature):
@@ -19,7 +20,7 @@ def chatgpt(temperature):
         # engine="davinci",
         # prompt="気温が{}度の時の服を60文字で".format(temperature)
         messages=[
-            {"role": "user", "content": "気温が{}度の時の服を60文字で".format(temperature)},
+            {"role": "user", "content": "気温が{:.1f}度の時の服を教えてください".format(temperature)},
         ]   
     )
 
