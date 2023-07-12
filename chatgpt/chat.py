@@ -4,10 +4,12 @@ from dotenv import load_dotenv
 
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from connection.target import get_temp_from_server
 
 def get_temperature():
-    temp = "20"
+    temp = get_temp_from_server()
     return temp
 
 def chatgpt(temperature):

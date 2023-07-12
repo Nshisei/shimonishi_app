@@ -1,0 +1,15 @@
+color,shape,person_id,season
+black,skinny,23026,summer and winter
+black,jacket,23026,winter
+green,yshirt,23026,summer
+brown,tshirt,23026,summer
+blue,jeans,23026,summer and winter
+black,yshirt,23021,summer
+black,tshirt,23021,summer
+grey,hoodie,23021,winter
+white,hoodie,23021,winter
+black,coat,23021,winter
+black,skinny,23021,summer and winter
+black,slacks,23021,summer and winter
+black,hoodie,23026,winter
+(13 rows)
