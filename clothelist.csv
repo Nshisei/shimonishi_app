@@ -1,15 +1,15 @@
 color,shape,person_id,season
-black,skinny,23026,summer and winter
-black,jacket,23026,winter
-green,yshirt,23026,summer
-brown,tshirt,23026,summer
-blue,jeans,23026,summer and winter
-black,yshirt,23021,summer
-black,tshirt,23021,summer
-grey,hoodie,23021,winter
-white,hoodie,23021,winter
-black,coat,23021,winter
-black,skinny,23021,summer and winter
-black,slacks,23021,summer and winter
-black,hoodie,23026,winter
+黒,Tシャツ,23021,夏
+茶,Tシャツ,23026,夏
+黒,ジャケット,23026,冬
+黒,パーカー,23026,冬
+白,パーカー,23021,冬
+灰色,パーカー,23021,冬
+黒,スラックス,23021,通年
+青,ジーンズ,23026,通年
+黒,スキニー,23026,通年
+黒,スキニー,23021,通年
+黒,Yシャツ,23021,夏
+緑,Yシャツ,23026,夏
+黒,コート,23021,冬
 (13 rows)
