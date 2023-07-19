@@ -1,18 +1,36 @@
 import psycopg2
-name='Bushi' 
+import pandas as pd
 # データベースに接続
-connection = psycopg2.connect(host='localhost',
-                             user='postgres',
-                             database='db_clothes')
-with connection:
-    with connection.cursor() as cursor:
-        # データ読み込み
-        sql = "SELECT id FROM namelist where name = %s"
-        cursor.execute(sql,(name,))
-        id = cursor.fetchall()
-        id=id[0]
-        print(id)
-        sql="SELECT * FROM clothelist where person_id = %s"
-        cursor.execute(sql,(id,))
-        result=cursor.fetchall()
-        print(result)
+db_config = {
+	'host': 'localhost',
+	'port': '5432',
+	'user': 'postgres',
+	'database': 'db_clothes'}
+SQL = """
+    SELECT DISTINCT
+        shape
+        , color
+        , season
+    FROM
+        namelist n
+    LEFT JOIN
+        clothelist l
+    ON
+        n.id = l.person_id
+    WHERE
+        n.name = '<NAME>'
+    ;
+    """
+def load_query_to_dataframe(sql):
+	with psycopg2.connect(**db_config) as conn:
+		df = pd.read_sql(sql,conn).to_numpy().tolist()
+		return df
+
+def get_info_from_db(name):
+    sql = SQL.replace('<NAME>', name)
+    result = load_query_to_dataframe(sql)
+    return result
+
+if __name__ == '__main__':
+    name = 'Bushi' 
+    print(get_info_from_db(name))
