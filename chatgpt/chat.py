@@ -24,17 +24,18 @@ def chatgpt(temperature):
     return response['choices'][0]['message']['content']
 
 
-
 load_dotenv()
 
 # Install the Slack app and get xoxb- token in advance
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
-@app.event("app_mention")
-def message_mention(say):
-    temperature = get_temperature()
-    advice = chatgpt(temperature)
-    say(advice)
+# @app.event("app_mention")
+@app.message('服装予報')
+def message_mention(message, say):
+    name = message['text'].replace('服装予報', '')
+    # temperature = get_temperature()
+    # advice = chatgpt(temperature)
+    # say(advice)
 
 @app.event("message")
 def handle_message_events(body, logger):
