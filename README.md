@@ -46,3 +46,5 @@ DBにユーザを削除する
 delete user
 <id>
 ```
+
+※ただし、このgit上にはchatgptのAPIやSlackのAPI keyが存在しない & DBがラズパイ上に構築されているためそのままでは動作しません
