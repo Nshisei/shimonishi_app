@@ -1,5 +1,6 @@
 # shimonishi_app
 これは、2023年春・夏学期の情報ネットワーク学演習Iで下西研2で作成したプログラムである。
+https://github.com/Nshisei/shimonishi_app.git
 
 ## 概要
 気温と持っている服装に合わせて、その日の適切な服装を提案するアプリケーション
@@ -48,3 +49,4 @@ delete user
 ```
 
 ※ただし、このgit上にはchatgptのAPIやSlackのAPI keyが存在しない & DBがラズパイ上に構築されているためそのままでは動作しません
+
