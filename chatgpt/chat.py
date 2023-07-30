@@ -16,8 +16,11 @@ def get_temperature():
     print(temp)
     return temp
 
-def make_text(temperature, clothes_list):
-    text = f"本日:{dt} 気温が{temperature:.1f}度の時に適切な男性のコーディネートを教えてください\n"
+def make_text(temperature, clothes_list, gender):
+    if gender == 'w':
+        text = f"本日:{dt} 気温が{temperature:.1f}度の時に適切な女性のコーディネートを教えてください\n"
+    else:
+        text = f"本日:{dt} 気温が{temperature:.1f}度の時に適切な男性のコーディネートを教えてください\n"
     text += "ただし、以下の洋服をだけを使用してください。\n"
     for color, shape, season in clothes_list:
         text += f"・ 形状: {shape}, 色: {color}, 適切な季節: {season}\n" 
@@ -36,7 +39,8 @@ def chatgpt(text):
     return response['choices'][0]['message']['content']
 
 if __name__ == "__main__":
-    SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
+    print(get_temperature())
+    # SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
 
 
 

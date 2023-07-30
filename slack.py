@@ -5,7 +5,7 @@ from slack_bolt.adapter.socket_mode import SocketModeHandler
 from connection.target import get_temp_from_server
 from post_database.db_operation import *
 from chatgpt.chat import *
-
+import subprocess
 
 load_dotenv()
 
@@ -103,6 +103,8 @@ def _delete_user(message, say):
         else:
             message = text
     say(message)
+
+
 
 @app.event("message")
 def handle_message_events(body, logger):
